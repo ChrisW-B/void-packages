@@ -1,0 +1,29 @@
+# Template file for 'anyrun'
+pkgname=anyrun
+version=06017e753c8886d5296768dca80745ee09402a2d
+revision=1
+build_style=cargo
+hostmakedepends="pkg-config"
+makedepends="gtk-layer-shell-devel  gtk+3-devel pango-devel cairo-devel gdk-pixbuf-devel glib-devel"
+depends=""
+short_desc="Wayland based customizable runner with plugin support"
+maintainer="Chris Barry <blue.iron1752@chrisb.xyz>"
+license="GPL-3.0"
+homepage="https://github.com/anyrun-org/anyrun"
+changelog="https://github.com/anyrun-org/${pkgname}/blob/main/CHANGELOG.md"
+distfiles="https://github.com/anyrun-org/anyrun/archive/${version}.tar.gz"
+checksum=bdae91851c9681252fd65c48db8c604992030ac07e223a2172fa210107d1de89
+
+do_install() {
+  vinstall examples/config.ron 644 etc/anyrun
+
+  vinstall anyrun/res/style.css 644 etc/anyrun
+
+  for plugin in target/*/release/*.so; do
+    vinstall $plugin 644 etc/anyrun/plugins
+  done
+
+  for f in target/*/release/anyrun; do
+    vbin $f
+  done
+}
