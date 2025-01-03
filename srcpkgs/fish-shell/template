@@ -4,10 +4,10 @@ version=4.0b1
 revision=1
 build_style=cmake
 build_helper="rust"
-hostmakedepends="rust cargo gettext pcre2-devel"
+hostmakedepends="rust cargo gettext"
+makedepends="pcre2-devel"
+depends="ncurses-base"
 configure_args="-DCMAKE_BUILD_TYPE=Release"
-makedepends="rust-std pcre2-devel"
-checkdepends="python3-pexpect procps-ng"
 short_desc="User friendly shell intended mostly for interactive use"
 maintainer="Orphaned <orphan@voidlinux.org>"
 license="GPL-2.0-only"
