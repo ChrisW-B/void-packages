@@ -2,64 +2,16 @@
 pkgname=astal-gtk3
 version=0.1
 revision=1
+build_wrksrc=lib/astal/gtk3
 build_style=meson
 build_helper=gir
-hostmakedepends="cmake vala valadoc pkg-config"
-makedepends="gtk+3-devel gtk-layer-shell-devel gobject-introspection"
-meson_builddir="lib/astal/astal-gtk3"
-depends="astal-io"
-short_desc="Building blocks for creating custom desktop shells "
+hostmakedepends="cmake vala valadoc pkg-config astal-io"
+makedepends="gtk+3-devel gtk-layer-shell-devel gobject-introspection astal-io"
+# depends="astal-io"
+short_desc="Building blocks for creating custom desktop shells"
 maintainer=""
 license="LGPL-2.1"
 homepage="https://aylur.github.io/astal/"
 changelog="https://github.com/Aylur/astal/releases"
 distfiles="https://github.com/Aylur/astal/archive/fa2d55e2c2ff2ba9e059f774db60aa4709292266.tar.gz"
 checksum=6b877da77e4b6280dbdd34c495550cd4dca9ecc1d09d93ff089bbff6c2ae983b
-
-if [ "$CROSS_BUILD" ]; then
-  hostmakedepends+=" glib-devel gjs-devel"
-fi
-
-
-do_configure() {
-  : ${meson_cmd:=meson}
-  : ${meson_builddir:=build}
-  : ${meson_crossfile:="${XBPS_WRAPPERDIR}/meson/xbps_meson.cross"}
-
-  if [ "$CROSS_BUILD" ]; then
-    configure_args+=" --cross-file=${meson_crossfile}"
-  fi
-
-  # binutils ar needs a plugin when LTO is used on static libraries, so we
-  # have to use the gcc-ar wrapper that calls the correct plugin.
-  # As seen in https://github.com/mesonbuild/meson/issues/1646 (and its
-  # solution, https://github.com/mesonbuild/meson/pull/1649), meson fixed
-  # issues with static libraries + LTO by defaulting to gcc-ar themselves.
-  # We also force gcc-ar usage in the crossfile above.
-  export AR="gcc-ar"
-
-
-  cd lib/astal/gtk3
-
-  ${meson_cmd} setup \
-    --prefix=/usr \
-    --libdir=/usr/lib${XBPS_TARGET_WORDSIZE} \
-    --libexecdir=/usr/libexec \
-    --bindir=/usr/bin \
-    --sbindir=/usr/bin \
-    --includedir=/usr/include \
-    --datadir=/usr/share \
-    --mandir=/usr/share/man \
-    --infodir=/usr/share/info \
-    --localedir=/usr/share/locale \
-    --sysconfdir=/etc \
-    --localstatedir=/var \
-    --sharedstatedir=/var/lib \
-    --buildtype=plain \
-    --auto-features=auto \
-    --wrap-mode=nodownload \
-    -Db_lto=true -Db_ndebug=true \
-    -Db_staticpic=true \
-    -Dpkgconfig.relocatable=false \
-    ${configure_args} . ${meson_builddir}
-}
