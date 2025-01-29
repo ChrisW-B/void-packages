@@ -1,0 +1,22 @@
+# Template file for 'way-edges'
+pkgname=way-edges
+version=0.5.2
+revision=1
+build_style=cargo
+# build_helper="gir rust"
+make_install_args="--path crates/way-edges"
+configure_args=""
+hostmakedepends="pkg-config"
+makedepends="freetype-devel glib-devel libxkbcommon-devel gtk4-devel pango-devel pipewire-devel pango-devel gdk-pixbuf-devel"
+depends=""
+short_desc="Lightweight wayland client focused on widgets hidden in your screen edge."
+maintainer="Chris Barry <blue.iron1752@chrisb.xyz>"
+license="GPL-3.0-or-later"
+homepage="https://way-edges.github.io/description"
+changelog="https://github.com/way-edges/way-edges/releases"
+distfiles="https://github.com/way-edges/way-edges/archive/refs/tags/${version}.tar.gz"
+checksum=04e6d204a4052543318e7cb33ff9eecd62d2a3c49df1875fc2cb37afae746b7e
+
+pre_build() {
+  RUSTFLAGS+=" --cfg tokio_unstable"
+}
