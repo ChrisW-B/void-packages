@@ -1,6 +1,6 @@
 # Template file for 'way-edges'
 pkgname=way-edges
-version=0.7.0
+version=0.7.1
 revision=1
 build_style=cargo
 make_install_args="--path crates/way-edges"
@@ -14,4 +14,4 @@ license="GPL-3.0-or-later"
 homepage="https://way-edges.github.io/description"
 changelog="https://github.com/way-edges/way-edges/releases"
 distfiles="https://github.com/way-edges/way-edges/archive/refs/tags/${version}.tar.gz"
-checksum=c8b40c32e56e9dc759a054add3f5780f819466d0a9279ea3cd8f7348545bfa69
+checksum=c0eadc2b9036165a1f7429dd485d87bb9e3b4edad135d8a1948cbc551baa61bd
