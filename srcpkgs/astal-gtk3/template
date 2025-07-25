@@ -1,0 +1,17 @@
+# Template file for 'astal3'
+pkgname=astal-gtk3
+version=3.0.0
+revision=1
+_commit_hash=5baeb660214bcafc9ae0b733a1bc84f5fa6078f4
+build_style=meson
+build_wrksrc=lib/astal/gtk3
+build_helper=gir
+hostmakedepends="wayland wayland-protocols pkg-config gobject-introspection astal-io-devel valadoc"
+makedepends="gtk+3-devel gtk-layer-shell-devel wayland astal-io-devel"
+short_desc="The Linux Suite to Craft Desktop Shells and Widgets with GTK!"
+maintainer="Chris Barry <blue.iron1752@chrisb.xyz>"
+license="LGPL-v2.1"
+homepage="https://aylur.github.io/astal"
+#changelog=""
+distfiles="https://github.com/Aylur/astal/archive/${_commit_hash}.tar.gz"
+checksum=3fd8b398609c8e0141333529e55eb897b1c4d0844c18ebf6fbf4b9b231644926
