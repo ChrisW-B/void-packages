@@ -1,12 +1,12 @@
 # Template file for 'glycin'
 pkgname=glycin
 version=1.2.3
-revision=1
+revision=2
 build_style=meson
 build_helper="rust gir"
-configure_args="-Dtest_skip_install=true"
+configure_args="-Dtest_skip_install=true -Dglycin-loaders=true -Dloaders=glycin-heif,glycin-image-rs,glycin-jxl,glycin-svg,glycin-raw"
 hostmakedepends="cargo clang19 gettext pkg-config vala"
-makedepends="gtk4-devel libheif-devel libjxl-devel librsvg-devel
+makedepends="gtk4-devel libopenraw-devel libheif-devel libjxl-devel librsvg-devel
  libseccomp-devel rust-std"
 depends="glycin-loaders>=${version}_${revision}"
 short_desc="Sandboxed and extendable image decoding"
