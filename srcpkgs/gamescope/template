@@ -1,15 +1,16 @@
 # Template file for 'gamescope'
 pkgname=gamescope
 version=3.16.17
-revision=1
-_glm_hash=0af55ccecd98d4e5a8d1fad7de25ba429d60e863
-_stb_hash=5736b15f7ea0ffb08dd38af21067c314d6a3aae9
-_vkroots_hash=5106d8a0df95de66cc58dc1ea37e69c99afc9540
-_reshade_hash=696b14cd6006ae9ca174e6164450619ace043283
-_spirv_hash=d790ced752b5bfc06b6988baadef6eb2d16bdf96
-_libdisplay_info_hash=66b802d05b374cd8f388dc6ad1e7ae4f08cb3300
-_libliftoff_hash=8b08dc1c14fd019cc90ddabe34ad16596b0691f4
-_wlroots_hash=54e844748029d4874e14d0c086d50092c04c8899
+revision=2
+_gscope_hash=12494be48bdfa2105c20a1d0a903c22e686a404e
+_glm_hash=e7714885929f1dcd2bdc2531cc99d3c1dc6daa18
+_stb_hash=fede005abaf93d9d7f3a679d1999b2db341b360f
+_vkroots_hash=51c32131da197a38c340da2537cbfd695e6ede78
+_reshade_hash=0ef2591a6a632fee080f1d2dae4dab9d46260c33
+_spirv_hash=01e0577914a75a2569c846778c2f93aa8e6feddd
+_libdisplay_info_hash=69d12ffb8b34aa6ba20b9d1dd00b4eb8ae397792
+_libliftoff_hash=9114b1e4dc8646b8f6512518567477926922905e
+_wlroots_hash=22528542970687720556035790212df8d9bb30bb
 build_style=meson
 configure_args="-Denable_openvr_support=false"
 hostmakedepends="glslang pkg-config wayland-devel hwids"
@@ -32,16 +33,17 @@ distfiles="https://github.com/ValveSoftware/gamescope/archive/${_gscope_hash}.ta
  https://github.com/KhronosGroup/SPIRV-Headers/archive/${_spirv_hash}.tar.gz
  https://gitlab.freedesktop.org/emersion/libdisplay-info/-/archive/${_libdisplay_info_hash}/libdisplay-info-${_libdisplay_info_hash}.tar.gz
  https://gitlab.freedesktop.org/emersion/libliftoff/-/archive/${_libliftoff_hash}/libliftoff-${_libliftoff_hash}.tar.gz
- https://github.com/Joshua-Ashton/wlroots/archive/${_wlroots_hash}.tar.gz"
-checksum="315d30faa7cc73b15f58d4169fba669da978fbddf707e87a85e79d83eb15d530
- e7f187d83523f505eb38dd25d297ea6c0d4ed856d733e808f18253f5a8fa88a0
- d00921d49b06af62aa6bfb97c1b136bec661dd11dd4eecbcb0da1f6da7cedb4c
- 37b77586e91f7ebee70380dcddd73bf01ae4acef1053e6be41d0485ede022422
- 3aa6feda7773cc8ffa8fb012fe95e6207c776101e29198d0e0d34a0c5e339f6a
- 90141b3f6261dba643fe546d56b4539e61fe40e307c5c3b9985ea9fa0622ac3f
- bca0664e23671572311b3b91f3b2fff3fd6501940320a8daff5e11b5219554a4
- 8de28aee6f90f47b7fc7037dcd2360166197c0b5d2033f3afdbd34f2ea1bf216
- 2398969e27fd7eae43fe0a3d90cc214b5668f1cb1e926552b8f2f4e97c6062af"
+ https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/${_wlroots_hash}/wlroots-${_wlroots_hash}.tar.gz"
+checksum="a72d5a551278463bcb46715103749a73c773ee5d19bd5e836e0d938dfb4cf67a
+ d88f536727c2b55e9672aaead8193f54d029319798dd131b6b89b4fc18e1e490
+ 3c45e9ab123933274ad782e19fc4029444bfe26e0a5eea483c30a82b880b8a42
+ 9487cdefa7f21e4d2dfd5bd8cc67d8ff99ec3c3daaab1f8060ef970c39f31d3b
+ 0c9956c4ce1cf436fb6614b8559b6c263258fce754e4aab0970d9d06a51bd444
+ 494bd30dc13ba798af70edd989f8df82c90757c8ce9433598480f5e00e04c454
+ 1f14ce37638822f019e6c673b05c400c66b5cbc25bb6bf7138d65dc1073459aa
+ 1d7d1aa1b02a54a5130211f60bfc1bd6608d124f91c869f86d9b5256178ed365
+ f6c55c22f826a4f62ec3c437a34a09b340fe5b1954f4bce5d069a12e853b2600"
+
 skip_extraction="${_glm_hash}.tar.gz
  ${_stb_hash}.tar.gz
  ${_vkroots_hash}.tar.gz
