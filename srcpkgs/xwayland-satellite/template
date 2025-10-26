@@ -2,6 +2,7 @@
 pkgname=xwayland-satellite
 version=0.8
 revision=1
+_commit=2dd40ecfe882c1659e0e46c761974702c7ab5fde
 build_style=cargo
 hostmakedepends="pkg-config clang"
 makedepends="xcb-util-cursor-devel"
@@ -10,6 +11,6 @@ short_desc="Xwayland outside your Wayland compositor"
 maintainer="Lydia Sobot <chilledfrogs@disroot.org>"
 license="MPL-2.0"
 homepage="https://github.com/Supreeeme/xwayland-satellite"
-distfiles="https://github.com/Supreeeme/xwayland-satellite/archive/v${version}.tar.gz"
-checksum=c93bae2f9e3df5cb5511a65684cd6ecf8559c1663163e8a19b4894e4424e73c3
+distfiles="https://github.com/Supreeeme/xwayland-satellite/archive/${_commit}.tar.gz"
+checksum=581af8b1bc63126ee07f863a79f75bb47e2a92de6bf3f2d209e8b749a7f9c0e5
 make_check="ci-skip" # Some tests require a running Wayland environment
