@@ -1,0 +1,19 @@
+# Template file for 'svlogj'
+pkgname=svlogj
+version=0.6.3
+_commit_hash=55cc366730a3d57ca89fa1eee090d018de730f92
+revision=1
+build_style=go
+go_import_path=svlogj
+depends="socklog"
+short_desc="Frontend for svlogtail in Void Linux"
+maintainer="zenobit <zenobit@disroot.org>"
+license="GPL-2.0-only"
+homepage="https://github.com/bvdeenen/svlogj"
+changelog="https://github.com/bvdeenen/svlogj/compare/v0.1.0...v${version}"
+distfiles="https://github.com/bvdeenen/svlogj/archive/${_commit_hash}.tar.gz"
+checksum=dd3576778f7368c594424c73d8dffbd2bba60b50d214baff2b325116d3127baf
+
+post_install() {
+	vdoc README.md
+}
