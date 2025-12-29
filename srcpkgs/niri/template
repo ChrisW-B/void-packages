@@ -1,15 +1,13 @@
 # Template file for 'niri'
 pkgname=niri
 version=25.11
-revision=1
-_commit_hash=5b77107161c504376b962107913bf74b575703e7
+_commit_hash=b5640d5293ad8dca06cb447692ea7cbb21680eb1
+revision=2
 build_style=cargo
 build_helper="qemu"
 configure_args="--no-default-features --features dbus,xdp-gnome-screencast"
 hostmakedepends="pkg-config clang19-devel"
-makedepends="eudev-libudev-devel libxkbcommon-devel libinput-devel libgbm-devel
- libdisplay-info-devel pipewire-devel pango-devel libseat-devel clang19-devel
-gdk-pixbuf-devel graphene-devel gtk4-devel libadwaita-devel"
+makedepends="clang19-devel eudev-libudev-devel libxkbcommon-devel libinput-devel libgbm-devel libdisplay-info-devel pipewire-devel pango-devel libseat-devel gdk-pixbuf-devel graphene-devel gtk4-devel libadwaita-devel"
 depends="wayland"
 checkdepends="wayland"
 short_desc="Scrollable-tiling Wayland compositor"
@@ -17,9 +15,9 @@ maintainer="Andrew J. Hesford <ajh@sideband.org>"
 license="GPL-3.0-or-later"
 homepage="https://yalter.github.io/niri"
 changelog="https://github.com/YaLTeR/niri/releases"
-distfiles="https://github.com/YaLTeR/niri/archive/refs/tags/v${version}.tar.gz"
-# distfiles="https://github.com/YaLTeR/niri/archive/${_commit_hash}.tar.gz"
-checksum=ddff7031bbd16d30a6c416256411190eb76259028ae5d6804d1d9ed10cce06ca
+# distfiles="https://github.com/YaLTeR/niri/archive/refs/tags/v${version}.tar.gz"
+distfiles="https://github.com/YaLTeR/niri/archive/${_commit_hash}.tar.gz"
+checksum=3afea327429f62eea14bc62232e1e2684fb0131c34d804757e108432891dfb8b
 
 pre_check() {
 	export XDG_RUNTIME_DIR=$(mktemp -d "$wrksrc/runtime.XXXXXX")
