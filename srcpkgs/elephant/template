@@ -1,6 +1,6 @@
 # Template file for 'elephant'
 pkgname=elephant
-version=2.17.2
+version=2.18.1
 revision=1
 build_style=go
 go_import_path=github.com/abenz1267/elephant/v2
@@ -12,7 +12,7 @@ license="GPL-3.0-or-later"
 homepage="https://github.com/abenz1267/elephant"
 changelog="https://github.com/abenz1267/elephant/releases"
 distfiles="https://github.com/abenz1267/elephant/archive/v${version}.tar.gz"
-checksum=b026d227eec81bd6d816684a41a894e65d5daded10aa20fb5e9e46c73f7f1206
+checksum=b7a82a4dae46dcfdd4d60b0336d7706a5e4a07c1555894b6cc7f90644f57db01
 
 case "$XBPS_TARGET_MACHINE" in
 	"aarch64" | "aarch64-musl")
