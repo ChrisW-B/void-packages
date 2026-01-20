@@ -1,6 +1,6 @@
 # Template file for 'walker'
 pkgname=walker
-version=2.12.2
+version=2.13.0
 revision=1
 build_style=cargo
 hostmakedepends="pkg-config protobuf"
@@ -12,7 +12,7 @@ license="GPL-3.0-only"
 homepage="https://github.com/abenz1267/walker"
 changelog="https://github.com/abenz1267/walker/releases"
 distfiles="https://github.com/abenz1267/walker/archive/v${version}.tar.gz"
-checksum=5eda553cb1c5a2d78eed1853b38ef5f5e680b874be627466cc85efaa17ef574d
+checksum=f4324a7e79ffaeb92e2a9b43218de55e7a7382d3ae03a4162061091353df9584
 
 post_install() {
 	vinstall resources/config.toml 644 etc/xdg/walker
