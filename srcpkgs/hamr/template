@@ -1,0 +1,21 @@
+# Template file for 'hamr'
+pkgname=hamr
+version=1.0.0
+revision=1
+build_style=cargo
+make_install_args="--path crates/hamr-core"
+hostmakedepends="python3 pkg-config"
+makedepends="gtk4-devel gtk4-layer-shell-devel "
+short_desc="An extensible launcher for Hyprland and Niri built with Quickshell"
+maintainer="Chris Barry <blue.iron1752@chrisb.xyz>"
+license="GPL-3.0-or-later"
+homepage="https://hamr.run"
+distfiles="https://github.com/Stewart86/hamr/archive/refs/heads/rusty-hamr-v1.0.0-alpha.zip"
+checksum=a93eab3f7c294b6b95b5be87b4485eb6b74c860a487c99c607b5aba176558b3c
+
+do_install() {
+    vbin target/${RUST_TARGET}/release/hamr
+    vbin target/${RUST_TARGET}/release/hamr-daemon
+    vbin target/${RUST_TARGET}/release/hamr-gtk
+    vbin target/${RUST_TARGET}/release/hamr-tui
+}
