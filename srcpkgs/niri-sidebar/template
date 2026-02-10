@@ -1,6 +1,6 @@
 # Template file for 'niri-sidebar'
 pkgname=niri-sidebar
-version=0.1.1
+version=0.2.0
 revision=1
 build_style=cargo
 hostmakedepends="cargo"
@@ -10,7 +10,7 @@ maintainer="Soulful Sailer <soulful.sailer@entropic.pro>"
 license="MIT"
 homepage="https://github.com/Vigintillionn/niri-sidebar"
 distfiles="https://github.com/Vigintillionn/niri-sidebar/archive/refs/tags/v${version}.tar.gz"
-checksum=7c540219e8fef6852758bd335a752faa0937e37b3ef4bb294808f99695e89a42
+checksum=74292d30a4d86e647c7891051085ff64062b0db4aeaf9fd6b655b882619f4e9a
 
 post_install() {
 	vlicense LICENSE
