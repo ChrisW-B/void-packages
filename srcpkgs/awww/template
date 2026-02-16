@@ -1,9 +1,9 @@
 # Template file for 'awww'
 pkgname=awww
 version=0.11.2
-revision=1
+revision=2
 build_style=cargo
-_commit_hash="05f0e470281b5ad45e3bf11c4314ea64befee25c"
+_commit_hash="2c86d41d07471f518e24f5cd1f586e4d2a32d12c"
 hostmakedepends="scdoc pkg-config"
 makedepends="liblz4-devel wayland-devel wayland-protocols"
 short_desc="An Answer to your Wayland Wallpaper Woes"
@@ -12,7 +12,7 @@ license="GPL-3.0-only"
 homepage="https://codeberg.org/LGFae/awww"
 changelog="https://codeberg.org/LGFae/awww/raw/branch/main/CHANGELOG.md"
 distfiles="https://codeberg.org/LGFae/awww/archive/${_commit_hash}.tar.gz"
-checksum=b9a9c48d69f4ee6027f8f84c3210324e8e1b4faa7a28a0eb95f70205eeb61802
+checksum=234a7868419632a995e81009e547c718b8f607a6ea6663b1d373de5ba3bdf137
 
 post_build() {
 	./doc/gen.sh
