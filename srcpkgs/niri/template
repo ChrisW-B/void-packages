@@ -1,8 +1,8 @@
 # Template file for 'niri'
 pkgname=niri
 version=26.01
-_commit_hash=601eacffcb6e43b984b89fd758f0948364eb89e8
-revision=3
+_commit_hash=3b9f6ca062056348ef1a280716718d96c591246d
+revision=4
 build_style=cargo
 build_helper="qemu"
 configure_args="--no-default-features --features dbus,xdp-gnome-screencast"
@@ -17,7 +17,7 @@ homepage="https://yalter.github.io/niri"
 changelog="https://github.com/YaLTeR/niri/releases"
 # distfiles="https://github.com/YaLTeR/niri/archive/refs/tags/v${version}.tar.gz"
 distfiles="https://github.com/YaLTeR/niri/archive/${_commit_hash}.tar.gz"
-checksum=a53fbcee8645c0826c434f98748bfaa811d46399714a4c76f9f79fbf9307251e
+checksum=d60969f1f98cd481bb8ebe832eac043f07f1d729506b7315551b70a45578a33c
 
 pre_check() {
 	export XDG_RUNTIME_DIR=$(mktemp -d "$wrksrc/runtime.XXXXXX")
